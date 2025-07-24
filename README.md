@@ -1,4 +1,4 @@
-# Emotion-Based Engagement Assistant
+# Emotion Retention System
 
 ![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)
 ![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)
