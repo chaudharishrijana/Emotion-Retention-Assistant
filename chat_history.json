@@ -439,5 +439,42 @@
                 "score": 0.009172678925096989
             }
         ]
+    },
+    {
+        "user": "are you there",
+        "emotion": "surprise",
+        "churn": false,
+        "churn_percent": 3.021452040411532,
+        "action": "If you see something bad happening to the robot, give a warning to the user and send a message to the network's administrator.",
+        "scores": [
+            {
+                "label": "anger",
+                "score": 0.006111428141593933
+            },
+            {
+                "label": "disgust",
+                "score": 0.0030543506145477295
+            },
+            {
+                "label": "fear",
+                "score": 0.002885729307308793
+            },
+            {
+                "label": "joy",
+                "score": 0.015376339666545391
+            },
+            {
+                "label": "neutral",
+                "score": 0.38268938660621643
+            },
+            {
+                "label": "sadness",
+                "score": 0.018163012340664864
+            },
+            {
+                "label": "surprise",
+                "score": 0.5717197060585022
+            }
+        ]
     }
 ]
