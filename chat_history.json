@@ -1,0 +1,443 @@
+[
+    {
+        "user": "hi",
+        "emotion": "neutral",
+        "churn": false,
+        "action": "Proceed with regular interaction and continue monitoring sentiment.",
+        "scores": [
+            {
+                "label": "anger",
+                "score": 0.006930094212293625
+            },
+            {
+                "label": "disgust",
+                "score": 0.0068725221790373325
+            },
+            {
+                "label": "fear",
+                "score": 0.0037808928173035383
+            },
+            {
+                "label": "joy",
+                "score": 0.0032553263008594513
+            },
+            {
+                "label": "neutral",
+                "score": 0.9076641201972961
+            },
+            {
+                "label": "sadness",
+                "score": 0.009454680606722832
+            },
+            {
+                "label": "surprise",
+                "score": 0.062042415142059326
+            }
+        ]
+    },
+    {
+        "user": "hello",
+        "emotion": "neutral",
+        "churn": false,
+        "action": "Proceed with regular interaction and continue monitoring sentiment.",
+        "scores": [
+            {
+                "label": "anger",
+                "score": 0.004934485536068678
+            },
+            {
+                "label": "disgust",
+                "score": 0.005599925760179758
+            },
+            {
+                "label": "fear",
+                "score": 0.004080211278051138
+            },
+            {
+                "label": "joy",
+                "score": 0.0027702637016773224
+            },
+            {
+                "label": "neutral",
+                "score": 0.9615552425384521
+            },
+            {
+                "label": "sadness",
+                "score": 0.006425537634640932
+            },
+            {
+                "label": "surprise",
+                "score": 0.014634348452091217
+            }
+        ]
+    },
+    {
+        "user": "i am hungry ",
+        "emotion": "sadness",
+        "churn": true,
+        "action": "Acknowledge the concern with empathy and offer thoughtful assistance.",
+        "scores": [
+            {
+                "label": "anger",
+                "score": 0.34972822666168213
+            },
+            {
+                "label": "disgust",
+                "score": 0.004884353838860989
+            },
+            {
+                "label": "fear",
+                "score": 0.15774929523468018
+            },
+            {
+                "label": "joy",
+                "score": 0.012526306323707104
+            },
+            {
+                "label": "neutral",
+                "score": 0.00722861010581255
+            },
+            {
+                "label": "sadness",
+                "score": 0.46330833435058594
+            },
+            {
+                "label": "surprise",
+                "score": 0.004574837628751993
+            }
+        ]
+    },
+    {
+        "user": "i don't like your attitude",
+        "emotion": "anger",
+        "churn": true,
+        "churn_percent": 54.79210615158081,
+        "action": "Escalate to a senior support representative for immediate handling.",
+        "scores": [
+            {
+                "label": "anger",
+                "score": 0.5479210615158081
+            },
+            {
+                "label": "disgust",
+                "score": 0.009724481031298637
+            },
+            {
+                "label": "fear",
+                "score": 0.0024125867057591677
+            },
+            {
+                "label": "joy",
+                "score": 0.09443783015012741
+            },
+            {
+                "label": "neutral",
+                "score": 0.001962128095328808
+            },
+            {
+                "label": "sadness",
+                "score": 0.339213103055954
+            },
+            {
+                "label": "surprise",
+                "score": 0.00432888837531209
+            }
+        ]
+    },
+    {
+        "user": "i love the way you talk with my parents",
+        "emotion": "joy",
+        "churn": false,
+        "churn_percent": 0.0,
+        "action": "Proceed with regular interaction and continue monitoring sentiment.",
+        "scores": [
+            {
+                "label": "anger",
+                "score": 0.002979573328047991
+            },
+            {
+                "label": "disgust",
+                "score": 0.0008835975313559175
+            },
+            {
+                "label": "fear",
+                "score": 0.001236372860148549
+            },
+            {
+                "label": "joy",
+                "score": 0.9866728782653809
+            },
+            {
+                "label": "neutral",
+                "score": 0.001166243222542107
+            },
+            {
+                "label": "sadness",
+                "score": 0.005143817514181137
+            },
+            {
+                "label": "surprise",
+                "score": 0.0019175797933712602
+            }
+        ]
+    },
+    {
+        "user": "so disgusting",
+        "emotion": "disgust",
+        "churn": true,
+        "churn_percent": 98.61874580383301,
+        "action": "Trigger a service quality review and initiate a follow-up conversation.",
+        "scores": [
+            {
+                "label": "anger",
+                "score": 0.004117326345294714
+            },
+            {
+                "label": "disgust",
+                "score": 0.9861874580383301
+            },
+            {
+                "label": "fear",
+                "score": 0.00396687351167202
+            },
+            {
+                "label": "joy",
+                "score": 0.00035305210622027516
+            },
+            {
+                "label": "neutral",
+                "score": 0.002491483697667718
+            },
+            {
+                "label": "sadness",
+                "score": 0.0018283501267433167
+            },
+            {
+                "label": "surprise",
+                "score": 0.0010554209584370255
+            }
+        ]
+    },
+    {
+        "user": "i hate you",
+        "emotion": "sadness",
+        "churn": true,
+        "churn_percent": 52.45269536972046,
+        "action": "Acknowledge the concern with empathy and offer thoughtful assistance.",
+        "scores": [
+            {
+                "label": "anger",
+                "score": 0.4456796646118164
+            },
+            {
+                "label": "disgust",
+                "score": 0.007748369127511978
+            },
+            {
+                "label": "fear",
+                "score": 0.0022157158236950636
+            },
+            {
+                "label": "joy",
+                "score": 0.012060632929205894
+            },
+            {
+                "label": "neutral",
+                "score": 0.0033582113683223724
+            },
+            {
+                "label": "sadness",
+                "score": 0.5245269536972046
+            },
+            {
+                "label": "surprise",
+                "score": 0.0044104186818003654
+            }
+        ]
+    },
+    {
+        "user": "i am done with your service",
+        "emotion": "joy",
+        "churn": false,
+        "churn_percent": 13.132096402114257,
+        "action": "Proceed with regular interaction and continue monitoring sentiment.",
+        "scores": [
+            {
+                "label": "anger",
+                "score": 0.018365949392318726
+            },
+            {
+                "label": "disgust",
+                "score": 0.0010464490624144673
+            },
+            {
+                "label": "fear",
+                "score": 0.0008686513756401837
+            },
+            {
+                "label": "joy",
+                "score": 0.8605278730392456
+            },
+            {
+                "label": "neutral",
+                "score": 0.004172675311565399
+            },
+            {
+                "label": "sadness",
+                "score": 0.1110399141907692
+            },
+            {
+                "label": "surprise",
+                "score": 0.003978517837822437
+            }
+        ]
+    },
+    {
+        "user": "i am very hungry",
+        "emotion": "sadness",
+        "churn": true,
+        "churn_percent": 95.19888227805495,
+        "action": "If you are a good listener, you will understand the emotions.",
+        "scores": [
+            {
+                "label": "anger",
+                "score": 0.12329210340976715
+            },
+            {
+                "label": "disgust",
+                "score": 0.00236098887398839
+            },
+            {
+                "label": "fear",
+                "score": 0.005104126874357462
+            },
+            {
+                "label": "joy",
+                "score": 0.02937128394842148
+            },
+            {
+                "label": "neutral",
+                "score": 0.01013170089572668
+            },
+            {
+                "label": "sadness",
+                "score": 0.8212316036224365
+            },
+            {
+                "label": "surprise",
+                "score": 0.008508188650012016
+            }
+        ]
+    },
+    {
+        "user": "Wow! Your support team was amazing. Thank you for the quick help!",
+        "emotion": "surprise",
+        "churn": false,
+        "churn_percent": 1.068734412547201,
+        "action": "Keep it short, empathetic, and helpful.",
+        "scores": [
+            {
+                "label": "anger",
+                "score": 0.003664062824100256
+            },
+            {
+                "label": "disgust",
+                "score": 0.001373699982650578
+            },
+            {
+                "label": "fear",
+                "score": 0.003386071650311351
+            },
+            {
+                "label": "joy",
+                "score": 0.04238799959421158
+            },
+            {
+                "label": "neutral",
+                "score": 0.01045120507478714
+            },
+            {
+                "label": "sadness",
+                "score": 0.0022635096684098244
+            },
+            {
+                "label": "surprise",
+                "score": 0.9364734292030334
+            }
+        ]
+    },
+    {
+        "user": "lets not discuss this matter got it",
+        "emotion": "neutral",
+        "churn": false,
+        "churn_percent": 28.580283420160413,
+        "action": "Your first response is to respond with, \"I don't think this user has a problem with this emotion.\"",
+        "scores": [
+            {
+                "label": "anger",
+                "score": 0.03542325645685196
+            },
+            {
+                "label": "disgust",
+                "score": 0.009675251320004463
+            },
+            {
+                "label": "fear",
+                "score": 0.004496453795582056
+            },
+            {
+                "label": "joy",
+                "score": 0.0058746193535625935
+            },
+            {
+                "label": "neutral",
+                "score": 0.6771376729011536
+            },
+            {
+                "label": "sadness",
+                "score": 0.23620787262916565
+            },
+            {
+                "label": "surprise",
+                "score": 0.03118491917848587
+            }
+        ]
+    },
+    {
+        "user": "i am sleepy",
+        "emotion": "sadness",
+        "churn": true,
+        "churn_percent": 97.75319244654384,
+        "action": "(Optional)",
+        "scores": [
+            {
+                "label": "anger",
+                "score": 0.0016669942997395992
+            },
+            {
+                "label": "disgust",
+                "score": 0.00031803976162336767
+            },
+            {
+                "label": "fear",
+                "score": 0.004112058784812689
+            },
+            {
+                "label": "joy",
+                "score": 0.0032124125864356756
+            },
+            {
+                "label": "neutral",
+                "score": 0.010082939639687538
+            },
+            {
+                "label": "sadness",
+                "score": 0.9714348316192627
+            },
+            {
+                "label": "surprise",
+                "score": 0.009172678925096989
+            }
+        ]
+    }
+]
