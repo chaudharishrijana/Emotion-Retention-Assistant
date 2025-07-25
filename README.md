@@ -1,10 +1,4 @@
 # Emotion Retention Assistant
-
-![Python Version](https://img.shields.io/badge/python-3.9%2B-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
-
-> AI-powered emotion analysis system for predicting customer retention risk and generating personalized recommendations
-
 ## 🔍 Overview
 The Emotion Retention Assistant is a Streamlit-based application that combines Natural Language Processing (NLP) with conversational memory management to:
 1. Analyze user emotions from text inputs
@@ -32,6 +26,8 @@ graph TD
     F --> G[(JSON Storage)]
     C --> H[Visualization Engine]
     H --> B
+
+```
 
 ## 📦 Installation
 
