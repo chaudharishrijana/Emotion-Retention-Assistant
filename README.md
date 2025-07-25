@@ -31,6 +31,9 @@ streamlit run app.py
 ```
 ## Usage Guide
 ### Interface Overview
+![Emotion Retention Assistant Interface](assets/ui.png)
+*Figure: Main application interface showing conversation history sidebar and chat area*
+
 Component | Functionality
 --------- | -------------
 Main Chat Area | Displays conversation history with analysis
