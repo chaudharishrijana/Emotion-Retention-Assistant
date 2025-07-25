@@ -15,13 +15,7 @@ The **Emotion Retention Assistant** is an AI-powered Streamlit web app that dete
 
 ---
 
-## 🖼️ Demo Preview
 
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/your-screenshot-path/demo.png" alt="App Preview" width="80%">
-</p>
-
----
 
 ## 🧰 Tech Stack
 
