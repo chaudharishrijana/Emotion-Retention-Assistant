@@ -27,7 +27,7 @@ pip install -r requirements.txt
 ```
 
 ## Usage Guide
-### 3. Launch the application
+###  Launch the application
 ```bash
 streamlit run main.py
 ```
@@ -80,16 +80,16 @@ j-hartmann/emotion-english-distilroberta-base | Emotion classification | 7 emoti
 architecture
 gpt2 | Recommendation engine | 117M parameters, fine-tuned for retention strategies
 ### Core Algorithms
-# Emotion Detection
+# 1.Emotion Detection
 def detect_emotion(text):
  results = classifier(text)[0]
  return sorted(results, key=lambda x: x['score'], reverse=True)
-# Churn Risk Calculation
+# 2.Churn Risk Calculation
 def calculate_churn_percent(scores):
  risk_emotions = ['anger', 'disgust', 'fear', 'sadness']
  return sum(score['score'] for score in scores
  if score['label'].lower() in risk_emotions) * 100
-# Recommendation Engine
+# 3.Recommendation Engine
 def recommend_action(emotion, user_message):
  prompt = f"Generate retention response for: {user_message} with emotion {emotion}"
  return generator(prompt, max_length=100)[0]['generated_text']
