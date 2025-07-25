@@ -1,0 +1,86 @@
+[
+    {
+        "name": "test1",
+        "chat": [
+            {
+                "user": "Wow, I didn\u2019t expect that to happen so suddenly!\n",
+                "emotion": "surprise",
+                "churn": false,
+                "churn_percent": 1.1980692273937166,
+                "action": "The AI can help you to learn how to help your friends and family get through the hard times, but you should be aware that it can be a challenge.",
+                "scores": [
+                    {
+                        "label": "anger",
+                        "score": 0.0044392808340489864
+                    },
+                    {
+                        "label": "disgust",
+                        "score": 0.002391214482486248
+                    },
+                    {
+                        "label": "fear",
+                        "score": 0.004006759729236364
+                    },
+                    {
+                        "label": "joy",
+                        "score": 0.0032986062578856945
+                    },
+                    {
+                        "label": "neutral",
+                        "score": 0.005392780061811209
+                    },
+                    {
+                        "label": "sadness",
+                        "score": 0.001143437228165567
+                    },
+                    {
+                        "label": "surprise",
+                        "score": 0.9793279767036438
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "test2",
+        "chat": [
+            {
+                "user": "Wow, I didn\u2019t expect that to happen so suddenly!\n",
+                "emotion": "surprise",
+                "churn": false,
+                "churn_percent": 1.1980692273937166,
+                "action": "The AI can help you to learn how to help your friends and family get through the hard times, but you should be aware that it can be a challenge.",
+                "scores": [
+                    {
+                        "label": "anger",
+                        "score": 0.0044392808340489864
+                    },
+                    {
+                        "label": "disgust",
+                        "score": 0.002391214482486248
+                    },
+                    {
+                        "label": "fear",
+                        "score": 0.004006759729236364
+                    },
+                    {
+                        "label": "joy",
+                        "score": 0.0032986062578856945
+                    },
+                    {
+                        "label": "neutral",
+                        "score": 0.005392780061811209
+                    },
+                    {
+                        "label": "sadness",
+                        "score": 0.001143437228165567
+                    },
+                    {
+                        "label": "surprise",
+                        "score": 0.9793279767036438
+                    }
+                ]
+            }
+        ]
+    }
+]
