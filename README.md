@@ -1,33 +1,37 @@
-# 🧠 Emotion Retention Assistant
+# Emotion Retention Assistant
 
-The **Emotion Retention Assistant** is an AI-powered Streamlit web app that detects user emotions from chat messages, calculates churn risk, and recommends empathetic responses using GPT-2. It visualizes emotional states and helps support teams better retain customers based on sentiment.
+![Python Version](https://img.shields.io/badge/python-3.9%2B-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
 
----
+> AI-powered emotion analysis system for predicting customer retention risk and generating personalized recommendations
 
-## 🚀 Features
+## 🔍 Overview
+The Emotion Retention Assistant is a Streamlit-based application that combines Natural Language Processing (NLP) with conversational memory management to:
+1. Analyze user emotions from text inputs
+2. Predict retention risk using emotional patterns
+3. Generate personalized response recommendations
+4. Visualize emotional metrics through interactive dashboards
 
-- 🔍 Emotion detection using a fine-tuned RoBERTa model
-- 📉 Churn risk prediction based on emotional tone
-- 🤖 GPT-2 powered personalized recommendations
-- 📊 Emotion and churn risk visualizations
-- 💬 LangChain-based memory for chat history
-- 🗂️ Save, load, and manage previous chat sessions
+## ✨ Key Features
+| Feature | Technology | Benefit |
+|---------|------------|---------|
+| Real-time emotion classification | DistilRoBERTa model | Accurate multi-label emotion detection |
+| Churn risk prediction | Negative emotion aggregation | Proactive retention management |
+| AI-generated recommendations | GPT-2 text generation | Context-aware response strategies |
+| Persistent conversation memory | LangChain + JSON storage | Continuous context preservation |
+| Interactive visualizations | Matplotlib | Intuitive emotional insights |
 
----
-
-
-
-## 🧰 Tech Stack
-
-- **Frontend**: [Streamlit](https://streamlit.io/)
-- **NLP Models**: [Hugging Face Transformers](https://huggingface.co/)
-  - Emotion model: `j-hartmann/emotion-english-distilroberta-base`
-  - Text generation: `gpt2`
-- **Memory**: [LangChain](https://www.langchain.com/)
-- **Visualization**: `matplotlib`
-- **Storage**: JSON files for local chat history and archives
-
----
+## 📦 System Architecture
+```mermaid
+graph TD
+    A[User Input] --> B(Streamlit Interface)
+    B --> C[Emotion Classifier]
+    C --> D[Churn Calculator]
+    D --> E[Recommendation Generator]
+    E --> F[Memory Manager]
+    F --> G[(JSON Storage)]
+    C --> H[Visualization Engine]
+    H --> B
 
 ## 📦 Installation
 
