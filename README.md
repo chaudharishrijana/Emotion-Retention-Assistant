@@ -42,3 +42,9 @@ The **Emotion Retention Assistant** is an AI-powered Streamlit web app that dete
 ```bash
 git clone https://github.com/your-username/emotion-retention-assistant.git
 cd emotion-retention-assistant
+
+2. Install dependencies
+bash
+Copy
+Edit
+pip install -r requirements.txt
