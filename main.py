@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import json
 import os
 
-# ----- Model loading -----
+# Model loading 
 @st.cache_resource
 def load_emotion_classifier():
     return pipeline(
@@ -21,7 +21,7 @@ def load_text_generator():
 
 text_generator = load_text_generator()
 
-# ----- Files & Memory -----
+#  Files & Memory 
 CHAT_HISTORY_FILE = "chat_history.json"
 ARCHIVE_FILE = "archived_chats.json"
 
@@ -46,7 +46,7 @@ def restore_memory(chat_log):
         memory.chat_memory.add_user_message(chat.get("user", ""))
         memory.chat_memory.add_ai_message(f"Detected Emotion: {chat.get('emotion', 'N/A')}")
 
-# ----- Emotion and churn logic -----
+# Emotion and churn logic 
 def detect_emotion(text):
     result = emotion_classifier(text)[0]
     sorted_result = sorted(result, key=lambda x: x['score'], reverse=True)
@@ -76,7 +76,7 @@ Keep it short, empathetic, and helpful.
     recommendation = output.replace(prompt, "").strip().split("\n")[0]
     return recommendation
 
-# ----- Visualization -----
+#  Visualization 
 def show_emotion_graph(scores):
     labels = [item['label'] for item in scores]
     values = [item['score'] for item in scores]
@@ -104,7 +104,7 @@ def show_churn_graph(churn_percent):
     ax.grid(True, axis='y', linestyle='--', alpha=0.7)
     return fig
 
-# ----- Session State Initialization -----
+# Session State Initialization 
 if "chat_log" not in st.session_state:
     st.session_state.chat_log = []
 
@@ -117,7 +117,7 @@ if "selected_chat_index" not in st.session_state:
 # Restore memory on load
 restore_memory(st.session_state.chat_log)
 
-# ----- Chat control functions -----
+#  Chat control functions
 def new_chat(chat_name):
     if st.session_state.chat_log:
         st.session_state.archived_chats.append({
@@ -150,7 +150,7 @@ def delete_archived_chat(index):
         save_json(st.session_state.archived_chats, ARCHIVE_FILE)
         st.session_state.selected_chat_index = None
 
-# ----- Sidebar UI -----
+# Sidebar UI
 with st.sidebar:
     st.title("\U0001F4DA Conversation History")
 
@@ -182,7 +182,7 @@ with st.sidebar:
     else:
         st.info("No archived chats yet.")
 
-# ----- Main Chat UI -----
+# Main Chat UI 
 st.title("Emotion Retention Assistant")
 user_input = st.chat_input("Type your message here...")
 
@@ -203,7 +203,7 @@ if user_input:
     })
     save_json(st.session_state.chat_log, CHAT_HISTORY_FILE)
 
-# ----- Chat Display -----
+# Chat Display 
 for chat in st.session_state.chat_log:
     churn_percent = chat.get("churn_percent", 0.0)
     churn_text = "Yes" if chat.get("churn", False) else "No"
