@@ -25,11 +25,12 @@ cd <repository_directory>
 ```bash
 pip install -r requirements.txt
 ```
+
+## Usage Guide
 ### 3. Launch the application
 ```bash
-streamlit run app.py
+streamlit run main.py
 ```
-## Usage Guide
 ### Interface Overview
 ![Emotion Retention Assistant Interface](assets/ui.png)
 *Figure: Main application interface showing conversation history sidebar and chat area*
