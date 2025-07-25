@@ -44,3 +44,9 @@ cd <repository_directory>
 pip install -r requirements.txt
 ```
 
+### 3. Launch the application:
+```
+bash
+streamlit run app.py
+```
+
