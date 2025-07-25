@@ -38,6 +38,23 @@ Input Box | Message entry at bottom of screen
 Sidebar | Conversation management controls
 Expandable Panels | Detailed emotion and risk visualizations
 ### Workflow
+## 🔄 Workflow Process
+
+```mermaid
+graph TD
+    A[📥 Enter Customer Message] --> B{Processing Engine}
+    B --> C[🧠 Emotion Detection]
+    B --> D[⚠️ Churn Risk Calculation]
+    B --> E[💡 Recommendation Generation]
+    C --> F["**Primary Emotion**:<br>anger/joy/sadness..."]
+    D --> G["**Churn Risk**:<br>0-100%"]
+    E --> H["**Retention Recommendation**"]
+    F --> I[📊 Expand Analytics]
+    G --> I
+    H --> I
+    I --> J[📈 Emotion Distribution]
+    I --> K[🔍 Risk Assessment]
+```
 - Enter customer message in chat input
 - Application returns:
  - Primary detected emotion
