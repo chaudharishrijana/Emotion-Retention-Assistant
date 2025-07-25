@@ -1,7 +1,6 @@
-# requirements.txt
 streamlit
 transformers
 torch
 langchain
 matplotlib
-torch
+
