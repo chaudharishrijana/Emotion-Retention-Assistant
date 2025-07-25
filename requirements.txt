@@ -3,9 +3,4 @@ transformers
 torch
 langchain
 matplotlib
-<<<<<<< HEAD
-
-=======
-scikit-learn
-pandas
->>>>>>> 1b14728 (Fix requirements.txt: remove duplicates, add dependencies)
+<
