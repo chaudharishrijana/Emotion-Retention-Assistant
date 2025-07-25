@@ -40,8 +40,8 @@ The **Emotion Retention Assistant** is an AI-powered Streamlit web app that dete
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/emotion-retention-assistant.git
-cd emotion-retention-assistant
+git clone <repository_url>
+cd <repository_directory>
 ```
 
 #### 2. Install the dependencies
