@@ -81,18 +81,24 @@ architecture
 gpt2 | Recommendation engine | 117M parameters, fine-tuned for retention strategies
 ### Core Algorithms
 # 1.Emotion Detection
+```
 def detect_emotion(text):
  results = classifier(text)[0]
  return sorted(results, key=lambda x: x['score'], reverse=True)
+```
 # 2.Churn Risk Calculation
+```
 def calculate_churn_percent(scores):
  risk_emotions = ['anger', 'disgust', 'fear', 'sadness']
  return sum(score['score'] for score in scores
  if score['label'].lower() in risk_emotions) * 100
+```
 # 3.Recommendation Engine
+```
 def recommend_action(emotion, user_message):
  prompt = f"Generate retention response for: {user_message} with emotion {emotion}"
  return generator(prompt, max_length=100)[0]['generated_text']
+```
 ### Data Persistence
 File | Structure | Purpose
 ---- | --------- | -------
