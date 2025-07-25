@@ -23,3 +23,16 @@ graph TD
     E --> G
     F --> H[Dashboard]
     G --> H
+
+<!-- Triple backticks close the Mermaid block -->
+Installation
+Requirements
+Python 3.8+
+
+pip package manager
+
+Setup Process
+Create a requirements.txt file 
+Install dependencies:
+pip install -r requirements.txt
+
