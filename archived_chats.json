@@ -3,123 +3,39 @@
         "name": "test1",
         "chat": [
             {
-                "user": "Wow, I didn\u2019t expect that to happen so suddenly!\n",
-                "emotion": "surprise",
-                "churn": false,
-                "churn_percent": 1.1980692273937166,
-                "action": "The AI can help you to learn how to help your friends and family get through the hard times, but you should be aware that it can be a challenge.",
-                "scores": [
-                    {
-                        "label": "anger",
-                        "score": 0.0044392808340489864
-                    },
-                    {
-                        "label": "disgust",
-                        "score": 0.002391214482486248
-                    },
-                    {
-                        "label": "fear",
-                        "score": 0.004006759729236364
-                    },
-                    {
-                        "label": "joy",
-                        "score": 0.0032986062578856945
-                    },
-                    {
-                        "label": "neutral",
-                        "score": 0.005392780061811209
-                    },
-                    {
-                        "label": "sadness",
-                        "score": 0.001143437228165567
-                    },
-                    {
-                        "label": "surprise",
-                        "score": 0.9793279767036438
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "name": "test2",
-        "chat": [
-            {
-                "user": "Wow, I didn\u2019t expect that to happen so suddenly!\n",
-                "emotion": "surprise",
-                "churn": false,
-                "churn_percent": 1.1980692273937166,
-                "action": "The AI can help you to learn how to help your friends and family get through the hard times, but you should be aware that it can be a challenge.",
-                "scores": [
-                    {
-                        "label": "anger",
-                        "score": 0.0044392808340489864
-                    },
-                    {
-                        "label": "disgust",
-                        "score": 0.002391214482486248
-                    },
-                    {
-                        "label": "fear",
-                        "score": 0.004006759729236364
-                    },
-                    {
-                        "label": "joy",
-                        "score": 0.0032986062578856945
-                    },
-                    {
-                        "label": "neutral",
-                        "score": 0.005392780061811209
-                    },
-                    {
-                        "label": "sadness",
-                        "score": 0.001143437228165567
-                    },
-                    {
-                        "label": "surprise",
-                        "score": 0.9793279767036438
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "name": "test3",
-        "chat": [
-            {
-                "user": "I'm so frustrated with how they treated me",
-                "emotion": "anger",
+                "user": "i am tired",
+                "emotion": "sadness",
                 "churn": true,
-                "churn_percent": 99.45653156610206,
-                "action": "Tell your users to do what you feel they need to do, and don't try to \"win\" by saying anything as a means of getting them to stop.",
+                "churn_percent": 99.00783587363549,
+                "action": "You are an AI support assistant. A user sent this message: \"i am tired\"",
                 "scores": [
                     {
                         "label": "anger",
-                        "score": 0.9831253886222839
+                        "score": 0.0032616194803267717
                     },
                     {
                         "label": "disgust",
-                        "score": 0.002065899083390832
+                        "score": 0.0005780619685538113
                     },
                     {
                         "label": "fear",
-                        "score": 0.0019336127443239093
+                        "score": 0.001759071135893464
                     },
                     {
                         "label": "joy",
-                        "score": 0.0004680610145442188
+                        "score": 0.0020511173643171787
                     },
                     {
                         "label": "neutral",
-                        "score": 0.0026973984204232693
+                        "score": 0.005522866267710924
                     },
                     {
                         "label": "sadness",
-                        "score": 0.0074404152110219
+                        "score": 0.9844796061515808
                     },
                     {
                         "label": "surprise",
-                        "score": 0.002269195159897208
+                        "score": 0.002347639063373208
                     }
                 ]
             }

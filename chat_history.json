@@ -1,1 +1,39 @@
-[]
+[
+    {
+        "user": "I don't know if I can handle this anymore.",
+        "emotion": "neutral",
+        "churn": false,
+        "churn_percent": 33.81027951836586,
+        "action": "In general, don't be too blunt. Just say something, and it's good.",
+        "scores": [
+            {
+                "label": "anger",
+                "score": 0.05065227672457695
+            },
+            {
+                "label": "disgust",
+                "score": 0.1342563033103943
+            },
+            {
+                "label": "fear",
+                "score": 0.04503509774804115
+            },
+            {
+                "label": "joy",
+                "score": 0.0055128904059529305
+            },
+            {
+                "label": "neutral",
+                "score": 0.42545488476753235
+            },
+            {
+                "label": "sadness",
+                "score": 0.10815911740064621
+            },
+            {
+                "label": "surprise",
+                "score": 0.23092935979366302
+            }
+        ]
+    }
+]
