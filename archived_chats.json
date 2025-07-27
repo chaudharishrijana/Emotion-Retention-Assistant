@@ -1,6 +1,6 @@
 [
     {
-        "name": "test1",
+        "name": "test 1 ",
         "chat": [
             {
                 "user": "i am tired",
@@ -36,6 +36,43 @@
                     {
                         "label": "surprise",
                         "score": 0.002347639063373208
+                    }
+                ]
+            },
+            {
+                "user": "Don't make noise",
+                "emotion": "fear",
+                "churn": true,
+                "churn_percent": 71.82445097714663,
+                "action": "'Don't make noise.",
+                "scores": [
+                    {
+                        "label": "anger",
+                        "score": 0.09704850614070892
+                    },
+                    {
+                        "label": "disgust",
+                        "score": 0.031005190685391426
+                    },
+                    {
+                        "label": "fear",
+                        "score": 0.5280992984771729
+                    },
+                    {
+                        "label": "joy",
+                        "score": 0.004980825819075108
+                    },
+                    {
+                        "label": "neutral",
+                        "score": 0.26470062136650085
+                    },
+                    {
+                        "label": "sadness",
+                        "score": 0.062091514468193054
+                    },
+                    {
+                        "label": "surprise",
+                        "score": 0.012074077501893044
                     }
                 ]
             }

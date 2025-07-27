@@ -1,38 +1,112 @@
 [
     {
-        "user": "I don't know if I can handle this anymore.",
+        "user": "Lets go for drink",
         "emotion": "neutral",
         "churn": false,
-        "churn_percent": 33.81027951836586,
-        "action": "In general, don't be too blunt. Just say something, and it's good.",
+        "churn_percent": 2.8895796509459615,
+        "action": "'I'm not sure if you're going to be able to do that.",
         "scores": [
             {
                 "label": "anger",
-                "score": 0.05065227672457695
+                "score": 0.005630172323435545
             },
             {
                 "label": "disgust",
-                "score": 0.1342563033103943
+                "score": 0.010876510292291641
             },
             {
                 "label": "fear",
-                "score": 0.04503509774804115
+                "score": 0.0021029540803283453
             },
             {
                 "label": "joy",
-                "score": 0.0055128904059529305
+                "score": 0.06492682546377182
             },
             {
                 "label": "neutral",
-                "score": 0.42545488476753235
+                "score": 0.8997260928153992
             },
             {
                 "label": "sadness",
-                "score": 0.10815911740064621
+                "score": 0.010286159813404083
             },
             {
                 "label": "surprise",
-                "score": 0.23092935979366302
+                "score": 0.006451322231441736
+            }
+        ]
+    },
+    {
+        "user": "Coding is so tough",
+        "emotion": "sadness",
+        "churn": true,
+        "churn_percent": 86.92456744611263,
+        "action": "'I'm not sure if I'm going to be able to do that. I'm not sure if I'm going to be able to do that. I'm not sure if I'm going",
+        "scores": [
+            {
+                "label": "anger",
+                "score": 0.025170493870973587
+            },
+            {
+                "label": "disgust",
+                "score": 0.12398336082696915
+            },
+            {
+                "label": "fear",
+                "score": 0.26747065782546997
+            },
+            {
+                "label": "joy",
+                "score": 0.003470043884590268
+            },
+            {
+                "label": "neutral",
+                "score": 0.11003497987985611
+            },
+            {
+                "label": "sadness",
+                "score": 0.4526211619377136
+            },
+            {
+                "label": "surprise",
+                "score": 0.017249269410967827
+            }
+        ]
+    },
+    {
+        "user": "I love to doAI/ML",
+        "emotion": "joy",
+        "churn": false,
+        "churn_percent": 1.2464838509913534,
+        "action": "'I love to doAI/ML'",
+        "scores": [
+            {
+                "label": "anger",
+                "score": 0.0015266508562490344
+            },
+            {
+                "label": "disgust",
+                "score": 0.0010012546554207802
+            },
+            {
+                "label": "fear",
+                "score": 0.0006887191557325423
+            },
+            {
+                "label": "joy",
+                "score": 0.9807325005531311
+            },
+            {
+                "label": "neutral",
+                "score": 0.004257130436599255
+            },
+            {
+                "label": "sadness",
+                "score": 0.009248213842511177
+            },
+            {
+                "label": "surprise",
+                "score": 0.0025455334689468145
             }
         ]
     }

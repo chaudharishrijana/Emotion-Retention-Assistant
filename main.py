@@ -1,5 +1,4 @@
-#libraries 
-
+# libraries
 import streamlit as st
 from transformers import pipeline
 from langchain.memory import ConversationBufferMemory
@@ -7,7 +6,7 @@ import matplotlib.pyplot as plt
 import json
 import os
 
-# Model loading 
+# Model Loading
 @st.cache_resource
 def load_emotion_classifier():
     return pipeline(
@@ -15,40 +14,38 @@ def load_emotion_classifier():
         model="j-hartmann/emotion-english-distilroberta-base",
         return_all_scores=True
     )
+
 emotion_classifier = load_emotion_classifier()
 
 @st.cache_resource
 def load_text_generator():
-    return pipeline("text-generation", model="gpt2")
+    return pipeline("text-generation", model="distilgpt2")  
 
 text_generator = load_text_generator()
 
-#  Files & Memory 
+#  File Paths & Memory 
 CHAT_HISTORY_FILE = "chat_history.json"
 ARCHIVE_FILE = "archived_chats.json"
-
 memory = ConversationBufferMemory(return_messages=True)
 
-# Utility: Save JSON
 def save_json(data, filename):
     with open(filename, "w") as f:
         json.dump(data, f, indent=4)
 
-# Utility: Load JSON
 def load_json(filename):
     if os.path.exists(filename):
         with open(filename, "r") as f:
             return json.load(f)
     return []
 
-# Restore LangChain memory from past chat
 def restore_memory(chat_log):
     memory.chat_memory.messages.clear()
     for chat in chat_log:
         memory.chat_memory.add_user_message(chat.get("user", ""))
         memory.chat_memory.add_ai_message(f"Detected Emotion: {chat.get('emotion', 'N/A')}")
 
-# Emotion and churn logic 
+#  Emotion & Churn Logic 
+@st.cache_data
 def detect_emotion(text):
     result = emotion_classifier(text)[0]
     sorted_result = sorted(result, key=lambda x: x['score'], reverse=True)
@@ -59,8 +56,7 @@ def update_memory(user_input, emotion):
     memory.chat_memory.add_ai_message(f"Detected Emotion: {emotion}")
 
 def predict_churn(text, emotion):
-    negative_emotions = ['anger', 'disgust', 'fear', 'sadness']
-    return emotion.lower() in negative_emotions
+    return emotion.lower() in ['anger', 'disgust', 'fear', 'sadness']
 
 def calculate_churn_percent(emotion_scores):
     risk_emotions = ['anger', 'disgust', 'fear', 'sadness']
@@ -68,17 +64,15 @@ def calculate_churn_percent(emotion_scores):
     return risk_score * 100
 
 def recommend_action(churn_risk, emotion, user_message):
-    prompt = f"""
-You are an AI support assistant. A user sent this message: "{user_message}"
-The detected emotion is: {emotion}.
-Based on the tone and context, give a personalized recommendation on how to respond to this user to retain them, if there's a risk.
-Keep it short, empathetic, and helpful.
-"""
-    output = text_generator(prompt, max_length=100, do_sample=True, top_k=50)[0]['generated_text']
-    recommendation = output.replace(prompt, "").strip().split("\n")[0]
-    return recommendation
+    prompt = (
+        f"A user said: '{user_message}'\n"
+        f"Emotion detected: {emotion}.\n"
+        f"Give a short, empathetic response to retain them."
+    )
+    output = text_generator(prompt, max_new_tokens=40, do_sample=False)[0]['generated_text']
+    return output.replace(prompt, "").strip().split("\n")[0]
 
-#  Visualization 
+#  Visualization
 def show_emotion_graph(scores):
     labels = [item['label'] for item in scores]
     values = [item['score'] for item in scores]
@@ -89,10 +83,8 @@ def show_emotion_graph(scores):
     colors = [color_map.get(label.lower(), "#B0BEC5") for label in labels]
     fig, ax = plt.subplots()
     ax.bar(labels, values, color=colors)
-    ax.set_xlabel('Emotions')
-    ax.set_ylabel('Confidence Score')
     ax.set_ylim(0, 1)
-    ax.set_title("Emotion Confidence Scores")
+    ax.set_title("Emotion Confidence")
     ax.grid(True, axis='y', linestyle='--', alpha=0.7)
     return fig
 
@@ -106,7 +98,7 @@ def show_churn_graph(churn_percent):
     ax.grid(True, axis='y', linestyle='--', alpha=0.7)
     return fig
 
-# Session State Initialization 
+# Streamlit Session Initialization 
 if "chat_log" not in st.session_state:
     st.session_state.chat_log = []
 
@@ -116,10 +108,9 @@ if "archived_chats" not in st.session_state:
 if "selected_chat_index" not in st.session_state:
     st.session_state.selected_chat_index = None
 
-# Restore memory on load
 restore_memory(st.session_state.chat_log)
 
-#  Chat control functions
+#  Chat Control 
 def new_chat(chat_name):
     if st.session_state.chat_log:
         st.session_state.archived_chats.append({
@@ -152,17 +143,17 @@ def delete_archived_chat(index):
         save_json(st.session_state.archived_chats, ARCHIVE_FILE)
         st.session_state.selected_chat_index = None
 
-# Sidebar UI
+# Sidebar 
 with st.sidebar:
-    st.title("\U0001F4DA Conversation History")
-
+    st.title("📚 Conversation History")
     chat_name = st.text_input("New Chat Name", value="Untitled Chat")
+
     col_new, col_del_all = st.columns([1, 1])
     with col_new:
         if st.button("📝 New Chat"):
             new_chat(chat_name)
     with col_del_all:
-        if st.button("🗑️ Delete All History"):
+        if st.button("🗑️ Delete All"):
             delete_all_history()
 
     st.markdown("---")
@@ -176,10 +167,10 @@ with st.sidebar:
 
         col_load, col_del = st.columns([1, 1])
         with col_load:
-            if st.button("Load Selected Chat"):
+            if st.button("Load Chat"):
                 load_archived_chat(st.session_state.selected_chat_index)
         with col_del:
-            if st.button("Delete Selected Chat"):
+            if st.button("Delete Chat"):
                 delete_archived_chat(st.session_state.selected_chat_index)
     else:
         st.info("No archived chats yet.")
@@ -203,13 +194,15 @@ if user_input:
         "action": action,
         "scores": full_scores
     })
-    save_json(st.session_state.chat_log, CHAT_HISTORY_FILE)
 
-# Chat Display 
+    # Save only every 3 messages
+    if len(st.session_state.chat_log) % 3 == 0:
+        save_json(st.session_state.chat_log, CHAT_HISTORY_FILE)
+
+#  Chat Display
 for chat in st.session_state.chat_log:
     churn_percent = chat.get("churn_percent", 0.0)
     churn_text = "Yes" if chat.get("churn", False) else "No"
-
     st.chat_message("user").write(chat.get("user", ""))
     st.chat_message("assistant").markdown(
         f"""
@@ -218,11 +211,13 @@ for chat in st.session_state.chat_log:
 **Recommended Action:** _{chat.get("action", "N/A")}_  
 """
     )
-    with st.expander("\U0001F4CA Emotion & Churn Graphs"):
+
+#  Graphs Only 
+if st.session_state.chat_log:
+    last_chat = st.session_state.chat_log[-1]
+    with st.expander("📊 Emotion & Churn Graphs"):
         col1, col2 = st.columns(2)
         with col1:
-            fig1 = show_emotion_graph(chat.get("scores", []))
-            st.pyplot(fig1)
+            st.pyplot(show_emotion_graph(last_chat.get("scores", [])))
         with col2:
-            fig2 = show_churn_graph(churn_percent)
-            st.pyplot(fig2)
+            st.pyplot(show_churn_graph(last_chat.get("churn_percent", 0.0)))
