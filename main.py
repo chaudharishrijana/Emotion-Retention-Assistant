@@ -4,7 +4,7 @@ os.environ["STREAMLIT_SERVER_FILE_WATCHER_TYPE"] = "none"
 
 import streamlit as st
 from transformers import pipeline
-from langchain.memory import ConversationBufferMemory
+from langchain.chains.conversation.memory import ConversationBufferMemory
 import matplotlib.pyplot as plt
 import json
 import os
