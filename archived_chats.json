@@ -1,1 +1,234 @@
-[]
+[
+    {
+        "name": "test1",
+        "chat": [
+            {
+                "user": "can you talk with me",
+                "emotion": "neutral",
+                "churn": false,
+                "churn_percent": 13.488698191940784,
+                "action": "\"This person won't just make friends or ask for help.\"",
+                "scores": [
+                    {
+                        "label": "anger",
+                        "score": 0.023220699280500412
+                    },
+                    {
+                        "label": "disgust",
+                        "score": 0.00923779048025608
+                    },
+                    {
+                        "label": "fear",
+                        "score": 0.02514832839369774
+                    },
+                    {
+                        "label": "joy",
+                        "score": 0.012940763495862484
+                    },
+                    {
+                        "label": "neutral",
+                        "score": 0.7973995804786682
+                    },
+                    {
+                        "label": "sadness",
+                        "score": 0.07728016376495361
+                    },
+                    {
+                        "label": "surprise",
+                        "score": 0.05477262660861015
+                    }
+                ]
+            },
+            {
+                "user": "what kind of colour is this ",
+                "emotion": "neutral",
+                "churn": false,
+                "churn_percent": 45.93260753899813,
+                "action": "Give a quick and focused \"message\" so that the user can concentrate for a little and avoid making big social media exchanges. Remember to allow",
+                "scores": [
+                    {
+                        "label": "anger",
+                        "score": 0.13781984150409698
+                    },
+                    {
+                        "label": "disgust",
+                        "score": 0.062305450439453125
+                    },
+                    {
+                        "label": "fear",
+                        "score": 0.2385704517364502
+                    },
+                    {
+                        "label": "joy",
+                        "score": 0.008344915695488453
+                    },
+                    {
+                        "label": "neutral",
+                        "score": 0.45887717604637146
+                    },
+                    {
+                        "label": "sadness",
+                        "score": 0.020630331709980965
+                    },
+                    {
+                        "label": "surprise",
+                        "score": 0.07345174252986908
+                    }
+                ]
+            },
+            {
+                "user": "How disgusting let's find other place ",
+                "emotion": "disgust",
+                "churn": true,
+                "churn_percent": 99.71281043253839,
+                "action": "You can use your user's responses in more than one action.",
+                "scores": [
+                    {
+                        "label": "anger",
+                        "score": 0.004377350211143494
+                    },
+                    {
+                        "label": "disgust",
+                        "score": 0.9878180027008057
+                    },
+                    {
+                        "label": "fear",
+                        "score": 0.0034958720207214355
+                    },
+                    {
+                        "label": "joy",
+                        "score": 0.00028723120340146124
+                    },
+                    {
+                        "label": "neutral",
+                        "score": 0.0018934729741886258
+                    },
+                    {
+                        "label": "sadness",
+                        "score": 0.0014368793927133083
+                    },
+                    {
+                        "label": "surprise",
+                        "score": 0.0006911950767971575
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "test2",
+        "chat": [
+            {
+                "user": "can you talk with me",
+                "emotion": "neutral",
+                "churn": false,
+                "churn_percent": 13.488698191940784,
+                "action": "\"This person won't just make friends or ask for help.\"",
+                "scores": [
+                    {
+                        "label": "anger",
+                        "score": 0.023220699280500412
+                    },
+                    {
+                        "label": "disgust",
+                        "score": 0.00923779048025608
+                    },
+                    {
+                        "label": "fear",
+                        "score": 0.02514832839369774
+                    },
+                    {
+                        "label": "joy",
+                        "score": 0.012940763495862484
+                    },
+                    {
+                        "label": "neutral",
+                        "score": 0.7973995804786682
+                    },
+                    {
+                        "label": "sadness",
+                        "score": 0.07728016376495361
+                    },
+                    {
+                        "label": "surprise",
+                        "score": 0.05477262660861015
+                    }
+                ]
+            },
+            {
+                "user": "what kind of colour is this ",
+                "emotion": "neutral",
+                "churn": false,
+                "churn_percent": 45.93260753899813,
+                "action": "Give a quick and focused \"message\" so that the user can concentrate for a little and avoid making big social media exchanges. Remember to allow",
+                "scores": [
+                    {
+                        "label": "anger",
+                        "score": 0.13781984150409698
+                    },
+                    {
+                        "label": "disgust",
+                        "score": 0.062305450439453125
+                    },
+                    {
+                        "label": "fear",
+                        "score": 0.2385704517364502
+                    },
+                    {
+                        "label": "joy",
+                        "score": 0.008344915695488453
+                    },
+                    {
+                        "label": "neutral",
+                        "score": 0.45887717604637146
+                    },
+                    {
+                        "label": "sadness",
+                        "score": 0.020630331709980965
+                    },
+                    {
+                        "label": "surprise",
+                        "score": 0.07345174252986908
+                    }
+                ]
+            },
+            {
+                "user": "How disgusting let's find other place ",
+                "emotion": "disgust",
+                "churn": true,
+                "churn_percent": 99.71281043253839,
+                "action": "You can use your user's responses in more than one action.",
+                "scores": [
+                    {
+                        "label": "anger",
+                        "score": 0.004377350211143494
+                    },
+                    {
+                        "label": "disgust",
+                        "score": 0.9878180027008057
+                    },
+                    {
+                        "label": "fear",
+                        "score": 0.0034958720207214355
+                    },
+                    {
+                        "label": "joy",
+                        "score": 0.00028723120340146124
+                    },
+                    {
+                        "label": "neutral",
+                        "score": 0.0018934729741886258
+                    },
+                    {
+                        "label": "sadness",
+                        "score": 0.0014368793927133083
+                    },
+                    {
+                        "label": "surprise",
+                        "score": 0.0006911950767971575
+                    }
+                ]
+            }
+        ]
+    }
+]

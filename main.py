@@ -1,3 +1,7 @@
+import os
+# Disable file watcher to prevent inotify errors if deploying to Linux/Cloud
+os.environ["STREAMLIT_SERVER_FILE_WATCHER_TYPE"] = "none"
+
 import streamlit as st
 from transformers import pipeline
 from langchain.memory import ConversationBufferMemory
@@ -5,19 +9,25 @@ import matplotlib.pyplot as plt
 import json
 import os
 
-# Model loading 
+# Model loading with explicit PyTorch backend
 @st.cache_resource
 def load_emotion_classifier():
     return pipeline(
         "text-classification",
         model="j-hartmann/emotion-english-distilroberta-base",
-        return_all_scores=True
+        return_all_scores=True,
+        framework="pt"  # Force PyTorch instead of TensorFlow
     )
+
 emotion_classifier = load_emotion_classifier()
 
 @st.cache_resource
 def load_text_generator():
-    return pipeline("text-generation", model="gpt2")
+    return pipeline(
+        "text-generation", 
+        model="gpt2",
+        framework="pt"  # Force PyTorch for GPT2 as well
+    )
 
 text_generator = load_text_generator()
 
