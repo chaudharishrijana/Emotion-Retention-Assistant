@@ -1,5 +1,5 @@
 streamlit
 transformers
 torch
-langchain
+langchain>=0.1.0
 matplotlib
