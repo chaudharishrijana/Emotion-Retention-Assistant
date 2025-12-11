@@ -1,7 +1,6 @@
-# requirements.txt
-streamlit
-transformers
-torch
-matplotlib
+streamlit==1.31.0
+transformers==4.36.2
+torch==2.1.2
+matplotlib==3.8.2
 langchain==0.1.0
 langchain-core==0.1.0
