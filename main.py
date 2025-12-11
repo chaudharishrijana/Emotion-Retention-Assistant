@@ -1,22 +1,48 @@
 import os
-# Disable file watcher to prevent inotify errors if deploying to Linux/Cloud
 os.environ["STREAMLIT_SERVER_FILE_WATCHER_TYPE"] = "none"
 
 import streamlit as st
 from transformers import pipeline
-from langchain.chains.conversation.memory import ConversationBufferMemory
 import matplotlib.pyplot as plt
 import json
 import os
+#langchain memory
+class SimpleChatMemory:
+    """Custom chat memory implementation"""
+    
+    def __init__(self):
+        self.messages = []
+        self.chat_history = []
+    
+    def add_user_message(self, message):
+        self.messages.append({"role": "user", "content": message})
+        self.chat_history.append({"user": message})
+    
+    def add_ai_message(self, message):
+        self.messages.append({"role": "assistant", "content": message})
+        if self.chat_history and "user" in self.chat_history[-1]:
+            self.chat_history[-1]["ai"] = message
+    
+    def clear(self):
+        self.messages = []
+    
+    def get_chat_history(self):
+        return self.chat_history.copy()
+    
+    def get_messages(self):
+        return self.messages.copy()
 
-# Model loading with explicit PyTorch backend
+# Initialize memory
+memory = SimpleChatMemory()
+
+# Model loading
 @st.cache_resource
 def load_emotion_classifier():
     return pipeline(
         "text-classification",
         model="j-hartmann/emotion-english-distilroberta-base",
         return_all_scores=True,
-        framework="pt"  # Force PyTorch instead of TensorFlow
+        framework="pt"  
     )
 
 emotion_classifier = load_emotion_classifier()
@@ -26,7 +52,7 @@ def load_text_generator():
     return pipeline(
         "text-generation", 
         model="gpt2",
-        framework="pt"  # Force PyTorch for GPT2 as well
+        framework="pt" 
     )
 
 text_generator = load_text_generator()
@@ -34,8 +60,6 @@ text_generator = load_text_generator()
 # Files & Memory 
 CHAT_HISTORY_FILE = "chat_history.json"
 ARCHIVE_FILE = "archived_chats.json"
-
-memory = ConversationBufferMemory(return_messages=True)
 
 # Utility: Save JSON
 def save_json(data, filename):
@@ -49,12 +73,15 @@ def load_json(filename):
             return json.load(f)
     return []
 
-# Restore LangChain memory from past chat
+# Restore memory from past chat
 def restore_memory(chat_log):
-    memory.chat_memory.messages.clear()
+    memory.clear()
+    memory.chat_history = chat_log.copy()
     for chat in chat_log:
-        memory.chat_memory.add_user_message(chat.get("user", ""))
-        memory.chat_memory.add_ai_message(f"Detected Emotion: {chat.get('emotion', 'N/A')}")
+        if "user" in chat:
+            memory.add_user_message(chat.get("user", ""))
+            ai_response = f"Detected Emotion: {chat.get('emotion', 'N/A')}"
+            memory.add_ai_message(ai_response)
 
 # Emotion and churn logic 
 def detect_emotion(text):
@@ -63,8 +90,8 @@ def detect_emotion(text):
     return sorted_result[0]['label'], result
 
 def update_memory(user_input, emotion):
-    memory.chat_memory.add_user_message(user_input)
-    memory.chat_memory.add_ai_message(f"Detected Emotion: {emotion}")
+    memory.add_user_message(user_input)
+    memory.add_ai_message(f"Detected Emotion: {emotion}")
 
 def predict_churn(text, emotion):
     negative_emotions = ['anger', 'disgust', 'fear', 'sadness']
